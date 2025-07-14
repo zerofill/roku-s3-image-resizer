@@ -1,0 +1,22 @@
+{
+  "name": "s3-image-processor",
+  "version": "1.0.0",
+  "description": "Download images from S3, resize them, and reupload with different sizes",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.450.0",
+    "@aws-sdk/s3-request-presigner": "^3.450.0",
+    "sharp": "^0.32.6",
+    "inquirer": "^9.2.12",
+    "chalk": "^5.3.0",
+    "ora": "^7.0.1"
+  },
+  "keywords": ["s3", "image", "processing", "aws"],
+  "author": "",
+  "license": "MIT"
+} 
