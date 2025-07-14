@@ -171,7 +171,7 @@ class S3ImageProcessor {
         await this.s3Client.send(command);
         
         // Generate URL based on public access setting
-        const region = this.s3Client.config.region || 'us-east-1';
+        const region = process.env.AWS_REGION || 'us-east-1';
         const url = this.makePublic 
             ? `https://${this.bucketName}.s3.${region}.amazonaws.com/${key}`
             : `s3://${this.bucketName}/${key}`;
