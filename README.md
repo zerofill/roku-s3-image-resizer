@@ -1,6 +1,10 @@
 # S3 Image Processor
 
 A Node.js application that downloads images from an S3 bucket, processes them into multiple sizes, and reuploads them with public ACL and organized naming.
+Originally this was made for a Roku app we run. Because we needed to go back to buckets that had images and resize them. So you will need to modify the code if
+you have different image size requirements.
+
+It downloads the images, resizes them, then uploads them to the same path renamed. Then shows a list of the URLs.
 
 ## Features
 
@@ -47,12 +51,35 @@ For each original image, the app creates 4 versions:
 ## AWS Setup
 
 ### Option 1: Environment Variables
-Set the following environment variables:
+
+**Linux/macOS:**
 ```bash
 export AWS_ACCESS_KEY_ID=your_access_key
 export AWS_SECRET_ACCESS_KEY=your_secret_key
 export AWS_REGION=us-east-1  # Optional, defaults to us-east-1
 ```
+
+**Windows PowerShell:**
+```powershell
+$env:AWS_ACCESS_KEY_ID="your_access_key"
+$env:AWS_SECRET_ACCESS_KEY="your_secret_key"
+$env:AWS_REGION="us-east-1"
+```
+
+**Windows Command Prompt:**
+```cmd
+set AWS_ACCESS_KEY_ID=your_access_key
+set AWS_SECRET_ACCESS_KEY=your_secret_key
+set AWS_REGION=us-east-1
+```
+
+**Windows (Permanent):**
+1. Press `Windows + R`, type `sysdm.cpl`, press Enter
+2. Click "Environment Variables" button
+3. Add new User variables:
+   - `AWS_ACCESS_KEY_ID` = your_access_key
+   - `AWS_SECRET_ACCESS_KEY` = your_secret_key
+   - `AWS_REGION` = us-east-1
 
 ### Option 2: AWS CLI Configuration
 Configure AWS CLI:
